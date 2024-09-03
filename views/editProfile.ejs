@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Toodo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-300 p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Edit Form Section -->
+        <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Edit Toodo</h2>
+            <form action="/api/profile/<%= profile._id %>/edit" method="post">
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- FirstName Field -->
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700">FirstName</label>
+                        <input type="text" id="firstName" name="firstName" value="<%= profile.firstName %>" placeholder="Enter user title" class="mt-2 p-3 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <!-- LastName Field -->
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700">LastName</label>
+                        <input type="text" id="lastName" name="lastName" value="<%= profile.lastName %>" placeholder="Enter user content" class="mt-2 p-3 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></input>
+                    </div>
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" value="<%= profile.email %>" placeholder="Enter user content" class="mt-2 p-3 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></input>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="mt-6">
+                    <button type="submit" class="bg-indigo-600 text-white px-5 py-3 rounded-md font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Update Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
